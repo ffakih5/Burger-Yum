@@ -1,10 +1,8 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    if (event) {
-      console.info('DOM loaded');
-    }
+$(() => {
+    
   
     // UPDATE
-    const changeSleepBtns = document.querySelectorAll('.change-sleep');
+    const changeDevouredBtns = document.querySelectorAll('.change-devoured');
   
     // Set up the event listener for the create button
     if (changeSleepBtns) {
