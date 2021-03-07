@@ -28,4 +28,8 @@ const printQuestionMarks = (num) => {
       }
     }
   
-   
+    // Translate array of strings to a single comma-separated string
+    return arr.toString();
+  };
+  
+  
