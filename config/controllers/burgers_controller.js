@@ -7,7 +7,7 @@ const cat = require('../models/burger.js');
 
 // Create all our routes and set up logic within those routes where required.
 router.get('/', (req, res) => {
-  cat.all((data) => {
+  burger.all((data) => {
     const hbsObject = {
       burgers: data,
     };
@@ -16,7 +16,8 @@ router.get('/', (req, res) => {
   });
 });
 
-router.post('/api/cats', (req, res) => {
+router.post('/api/burgers', (req, res) => {
+    let devoured = 0;
   cat.create(['name', 'sleepy'], [req.body.name, req.body.sleepy], (result) => {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
