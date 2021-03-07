@@ -18,6 +18,9 @@ router.get('/', (req, res) => {
 
 router.post('/api/burgers', (req, res) => {
     let devoured = 0;
+    if(req.body.devoured === 'true') {
+        devoured = 1;
+    }
   cat.create(['name', 'sleepy'], [req.body.name, req.body.sleepy], (result) => {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
