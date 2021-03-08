@@ -3,25 +3,42 @@
 <h2>Add or devour your burger of choice!</h2>
     <div class="add-burger mt-4">
     <form class="start-form">
+      <div class="form-group">
       <div class="form-group mb-3">
         <input type="text" id="brgr" name="burger_name" class="form-control" placeholder="Burger Name"
-
+          aria-label="Burger Name" aria-describedby="button-add">
+        <div class="append-input-group">
+          <button class="add-burger-btn" type="submit" id="button-add"> Add A Burger</button>
+        </div>
       </div>
-
+    </div>
     </form>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+
+  <div class="burgers-list mt-5 d-flex flex-column flex-sm-row justify-content-between">
+    <div class="tobedevoured-list list-box my-2 my-sm-0 mr-sm-2">
+      <h2 class="title-list">To Be Devoured:</h2>
+      <ul class="content-list" id="tbd-list">
+        {{#each cats}}
+          {{#unless sleepy}}
+            {{> cats/cat-block sleep=true}}
+      {{/unless}}
+      {{/each}}
+
+
+      </ul>
 
     </div>
 
   </div>
-</div>
-<h2>Cats that are not sleepy!</h2>
 
+</div>
 <ul>
-  {{#each cats}}
-  {{#unless sleepy}}
-  {{> cats/cat-block sleep=true}}
-  {{/unless}}
-  {{/each}}
+  
 </ul>
 
 <h2>Cats that are sleepy!</h2>
