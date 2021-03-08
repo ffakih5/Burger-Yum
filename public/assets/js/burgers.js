@@ -1,4 +1,69 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+$(() => {
+
+  $('.status-devour').on('click', (event) => {
+    event.preventDefault();
+    const id = $(this).data('id');
+    const newDevour = $(this).data('newdevour');
+
+    const newDevourStatus = {
+      devoured: newDevour,
+    };
+
+    $.ajax(`/api/burgers/${id}`, {
+      type: 'PUT',
+      data: newDevourStatus,
+    }).then(() => {
+      console.log('devoured is now: ', newDevour);
+
+      location.reload();
+    });
+  });
+
+    $('start-form').on('submit', (event) =>{
+      event.preventDefault();
+
+      const burgerVal = $('#brgr')
+      .val()
+      .trim();
+    if (burgerVal) {
+      const newBurger = {
+        burger_name: $('#brgr')
+        .val()
+        .trim(),
+        devoured: 0,
+      };
+
+      $.ajax('/api/burgers', {
+        type: 'POST',
+        data: newBurger,
+      }).then(() => {
+        console.log('New burger created!');
+
+        location.reload();
+
+      });
+      }
+    });
+
+    $('.delete-burger').on('click', () => {
+      const id = $(this).data('id');
+    })
+
+
+    
+
+
+
+
+    });
+
+
+
+
+
+
+
+
     if (event) {
       console.info('DOM loaded');
     }
@@ -70,7 +135,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   
           // Reload the page so the user can see the new quote
           console.log('Created a new cat!');
-          location.reload();
+          
         });
       });
     }
