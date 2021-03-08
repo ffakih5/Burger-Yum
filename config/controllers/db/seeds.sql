@@ -1,8 +1,8 @@
 INSERT INTO burgers_db.burgers (burger_name, devoured)
 
 VALUES 
-("Hamburger"),
-("Cheeseburger")
-("BBQ Bacon Cheeseburger")
-("Southern Kentucky Fried Chicken Burger")
-("Veggie Burger");
+("Hamburger", 0),
+("Cheeseburger", 0),
+("BBQ Bacon Cheeseburger", 0),
+("Southern Kentucky Fried Chicken Burger", 0),
+("Veggie Burger", 0);
