@@ -45,16 +45,17 @@ $(() => {
       }
     });
 
-    $('.delete-burger').on('click', () => {
+    $('.delete-burger').on('click', (event) => {
       const id = $(this).data('id');
-    })
 
+        $.ajax(`/api/burgers/${id}`, {
+        type: 'DELETE',
+        }).then(() => {
+        console.log('Burger deleted', id);
 
-    
-
-
-
-
+        location.reload();
+        });
+      })
     });
 
 
