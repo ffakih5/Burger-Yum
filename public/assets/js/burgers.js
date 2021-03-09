@@ -44,7 +44,7 @@ if (createBurgerBtn) {
 
     // Grabs the value of the textarea that goes by the name, "quote"
     const newBurger = {
-      name: document.getElementById('bu').value.trim(),
+      name: document.getElementById('brgr').value.trim(),
       devoured: document.getElementById('devoured').checked,
     };
 
@@ -60,7 +60,7 @@ if (createBurgerBtn) {
       body: JSON.stringify(newBurger),
     }).then(() => {
       // Empty the form
-      document.getElementById('bu').value = '';
+      document.getElementById('brgr').value = '';
 
       // Reload the page so the user can see the new quote
       console.log('Created a new burger!');
@@ -69,30 +69,23 @@ if (createBurgerBtn) {
   });
 }
 
-const deleteCatBtns = document.querySelectorAll('.delete-cat');
+const deleteBurgerBtns = document.querySelectorAll('.delete-burger');
 
 // Set up the event listeners for each delete button
-deleteCatBtns.forEach((button) => {
+deleteBurgerBtns.forEach((button) => {
   button.addEventListener('click', (e) => {
     const id = e.target.getAttribute('data-id');
 
     // Send the delete request
-    fetch(`/api/cats/${id}`, {
+    fetch(`/api/burgers/${id}`, {
       method: 'DELETE',
     }).then((res) => {
       console.log(res);
-      console.log(`Deleted cat: ${id}`);
+      console.log(`Deleted burger: ${id}`);
 
       // Reload the page
       location.reload();
     });
   });
+ });
 });
-
-
-
-
-
-
-
-    });
