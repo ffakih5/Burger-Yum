@@ -1,4 +1,4 @@
-INSERT INTO burgers_db.burgers (burger_name, devoured)
+INSERT INTO burgers(burger_name, devoured)
 
 VALUES 
 ("Hamburger", false),
