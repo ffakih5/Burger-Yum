@@ -23,39 +23,76 @@ document.addEventListener("DOMContentLoaded",(event) => {
       },
 
 
-      body: JSON.stringify(newCat),
+      body: JSON.stringify(newDevourStatus),
+    }).then((response) => {
+      // Empty the form
+      if (response.ok){
+        console.log(`Status Updated: ${newDevour}`);
+        location.reload("/");
+      } else {
+        alert("Could noy update devour status")
+      }
+     });
+    });
+  });
+}
+const createBurgerBtn = document.getElementById('start-form');
+
+if (createBurgerBtn) {
+  createBurgerBtn.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Grabs the value of the textarea that goes by the name, "quote"
+    const newBurger = {
+      name: document.getElementById('bu').value.trim(),
+      devoured: document.getElementById('devoured').checked,
+    };
+
+    // Send POST request to create a new quote
+    fetch('/api/burgers', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+
+      // make sure to serialize the JSON body
+      body: JSON.stringify(newBurger),
     }).then(() => {
       // Empty the form
-      document.getElementById('ca').value = '';
+      document.getElementById('bu').value = '';
 
       // Reload the page so the user can see the new quote
-      console.log('Created a new cat!');
+      console.log('Created a new burger!');
       location.reload();
     });
   });
+}
 
+const deleteCatBtns = document.querySelectorAll('.delete-cat');
 
-      $.ajax('/api/burgers', {
-        type: 'POST',
-        data: newBurger,
-      }).then(() => {
-        console.log('New burger created!');
+// Set up the event listeners for each delete button
+deleteCatBtns.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    const id = e.target.getAttribute('data-id');
 
-        location.reload();
+    // Send the delete request
+    fetch(`/api/cats/${id}`, {
+      method: 'DELETE',
+    }).then((res) => {
+      console.log(res);
+      console.log(`Deleted cat: ${id}`);
 
-      });
-      }
+      // Reload the page
+      location.reload();
     });
+  });
+});
 
-    $('.delete-burger').on('click', (event) => {
-      const id = $(this).data('id');
 
-        $.ajax(`/api/burgers/${id}`, {
-        type: 'DELETE',
-        }).then(() => {
-        console.log('Burger deleted', id);
 
-        location.reload();
-        });
-      })
+
+
+
+
     });
