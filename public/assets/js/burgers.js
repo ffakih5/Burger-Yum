@@ -1,4 +1,7 @@
-$(() => {
+document.addEventListener("DOMContentLoaded",(event) => {
+  if (event) {
+    console.log("DOM Loaded");
+  }
 
   $('.status-devour').on('click', (event) => {
     event.preventDefault();

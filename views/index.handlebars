@@ -23,6 +23,7 @@
     <div class="tobedevoured-list list-box my-2 my-sm-0 mr-sm-2">
       <h2 class="title-list">To Be Devoured:</h2>
       <ul class="content-list" id="tbd-list">
+        
         {{#each burgers}}
           {{#unless devoured}}
             {{> burgers/burger-block devour=true}}
