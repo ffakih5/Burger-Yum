@@ -15,29 +15,25 @@ document.addEventListener("DOMContentLoaded",(event) => {
       devoured: newDevour,
     };
 
-    $.ajax(`/api/burgers/${id}`, {
-      type: 'PUT',
-      data: newDevourStatus,
-    }).then(() => {
-      console.log('devoured is now: ', newDevour);
+    fetch(`/api/burgers/${id}`, {
+      method: 'PUT',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
 
+
+      body: JSON.stringify(newCat),
+    }).then(() => {
+      // Empty the form
+      document.getElementById('ca').value = '';
+
+      // Reload the page so the user can see the new quote
+      console.log('Created a new cat!');
       location.reload();
     });
   });
 
-    $('start-form').on('submit', (event) =>{
-      event.preventDefault();
-
-      const burgerVal = $('#brgr')
-      .val()
-      .trim();
-    if (burgerVal) {
-      const newBurger = {
-        burger_name: $('#brgr')
-        .val()
-        .trim(),
-        devoured: 0,
-      };
 
       $.ajax('/api/burgers', {
         type: 'POST',
