@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded",(event) => {
   if (event) {
-    console.log("DOM Loaded");
+    console.info("DOM Loaded");
   }
 
-  $('.status-devour').on('click', (event) => {
-    event.preventDefault();
-    const id = $(this).data('id');
-    const newDevour = $(this).data('newdevour');
+  const changeDevourBtns = document.querySelectorAll(".status-devour");
+  if (changeDevourBtns) {
+    changeDevourBtns.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        // Grabs the id of the element that goes by the name, "id"
+        const id = e.target.getAttribute('data-id');
+        const newDevour= e.target.getAttribute('data-newdevour');
 
     const newDevourStatus = {
       devoured: newDevour,
