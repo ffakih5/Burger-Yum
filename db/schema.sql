@@ -1,6 +1,15 @@
-INSERT INTO burgers (burger_name) VALUES ('Cheeseburger');
-INSERT INTO burgers (burger_name) VALUES ('Zinger');
-INSERT INTO burgers (burger_name, devoured) VALUES ('Mushroom Burger', true);
-INSERT INTO burgers (burger_name, devoured) VALUES ('Fish Burger', true);
-INSERT INTO burgers (burger_name, devoured) VALUES ('Veggie Burger', true);
-INSERT INTO burgers (burger_name) VALUES ('BBQ Bacon Burger');
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'yourRootPassword'
+
+DROP DATABASE IF EXISTS burger_db;
+
+CREATE DATABASE burger_db;
+
+USE burger_db;
+
+CREATE TABLE burgers
+(
+	id int NOT NULL AUTO_INCREMENT,
+	burger_name varchar(255) NOT NULL,
+	devour BOOLEAN DEFAULT false,
+	PRIMARY KEY (id)
+);
