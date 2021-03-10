@@ -1,7 +1,7 @@
 {
   "name": "burger-yum",
   "version": "1.0.0",
-  "description": "",
+  "description": "A burger app that allows user to add burgers, select devoured and delete.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
