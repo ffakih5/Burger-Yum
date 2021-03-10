@@ -2,7 +2,6 @@
 
 ![burger-yum](img/burger-yumscreenshot.png)
 
-
 A burger app that allows user to add burgers, select devoured and delete.
 
 ## Made with
