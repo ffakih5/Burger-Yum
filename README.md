@@ -1,6 +1,6 @@
 # Burger-Yum 🍔😋
 
-![burger-yum](img/burger-yumscreenshot.png)
+![burger-yum](public/assets/img/burger-yum.png)
 
 A burger app that allows user to add burgers, select devoured and delete.
 
