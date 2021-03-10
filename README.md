@@ -2,6 +2,8 @@
 
 ![burger-yum](public/assets/img/burger-yum.png)
 
+### [Link to deployed page](https://ffakih5.github.io/Burger-Yum/.)
+
 A burger app that allows user to add burgers, select devoured and delete.
 
 ## Made with
