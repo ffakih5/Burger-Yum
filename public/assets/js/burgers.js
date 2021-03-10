@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       devoured: newDevour,
     };
 
-    fetch(`/api/burgers/${id}`, {
+    fetch(`/api/burgers.js/${id}`, {
       method: 'PUT',
       headers: {
         Accept: 'application/json',
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   });
 }
-    const createBurgerBtn = document.getElementById('start-form');
+    const createBurgerBtn = document.getElementById('start-form'); 
 
     if (createBurgerBtn) {
       createBurgerBtn.addEventListener('submit', (e) => {
@@ -47,11 +47,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Grabs the value of the textarea that goes by the name, "quote"
       const newBurger = {
       burger_name: document.getElementById('brgr').value.trim(),
-      devoured: document.getElementById('devoured').checked,
+      tbd-list: document.getElementById('tbd-list').checked,
     };
 
     // Send POST request to create a new quote
-    fetch('/api/burgers', {
+    fetch('/api/burgers.js', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -79,7 +79,7 @@ deleteBurgerBtns.forEach((button) => {
     const id = e.target.getAttribute('data-id');
 
     // Send the delete request
-    fetch(`/api/burgers/${id}`, {
+    fetch(`/api/burgers.js/${id}`, {
       method: 'DELETE',
     }).then((res) => {
       console.log(res);
