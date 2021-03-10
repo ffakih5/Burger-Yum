@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded",(event) => {
+document.addEventListener('DOMContentLoaded', (event) => {
   if (event) {
-    console.info("DOM Loaded");
+    console.info('DOM Loaded');
   }
 
-  const changeDevourBtns = document.querySelectorAll(".status-devour");
+  const changeDevourBtns = document.querySelectorAll('.status-devour');
   if (changeDevourBtns) {
     changeDevourBtns.forEach((button) => {
       button.addEventListener('click', (e) => {
@@ -22,17 +22,16 @@ document.addEventListener("DOMContentLoaded",(event) => {
         'Content-Type': 'application/json',
       },
 
-
       body: JSON.stringify(newDevourStatus),
     }).then((response) => {
       // Empty the form
-      if (response.ok){
+      if (response.ok) {
         console.log(`Status Updated: ${newDevour}`);
         location.reload("/");
       } else {
-        alert("Could not update devour status")
+        alert('Could not update devour status')
+        console.log(response)
       }
-      console.log(response)
      });
     });
   });
@@ -45,7 +44,7 @@ if (createBurgerBtn) {
 
     // Grabs the value of the textarea that goes by the name, "quote"
     const newBurger = {
-      name: document.getElementById('brgr').value.trim(),
+      burger_name: document.getElementById('brgr').value.trim(),
       devoured: document.getElementById('devoured').checked,
     };
 
