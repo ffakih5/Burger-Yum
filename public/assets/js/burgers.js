@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded",(event) => {
       } else {
         alert("Could noy update devour status")
       }
+      console.log(response)
      });
     });
   });
