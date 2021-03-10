@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded",(event) => {
       devoured: newDevour,
     };
 
-    fetch(`/api/burger/${id}`, {
+    fetch(`/api/burgers/${id}`, {
       method: 'PUT',
       headers: {
         Accept: 'application/json',
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded",(event) => {
         console.log(`Status Updated: ${newDevour}`);
         location.reload("/");
       } else {
-        alert("Could noy update devour status")
+        alert("Could not update devour status")
       }
       console.log(response)
      });
@@ -50,7 +50,7 @@ if (createBurgerBtn) {
     };
 
     // Send POST request to create a new quote
-    fetch('/api/burger', {
+    fetch('/api/burgers', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -78,7 +78,7 @@ deleteBurgerBtns.forEach((button) => {
     const id = e.target.getAttribute('data-id');
 
     // Send the delete request
-    fetch(`/api/burger/${id}`, {
+    fetch(`/api/burgers/${id}`, {
       method: 'DELETE',
     }).then((res) => {
       console.log(res);
