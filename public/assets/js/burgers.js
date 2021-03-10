@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   const changeDevourBtns = document.querySelectorAll('.status-devour');
+
+
   if (changeDevourBtns) {
     changeDevourBtns.forEach((button) => {
       button.addEventListener('click', (e) => {
@@ -36,14 +38,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   });
 }
-const createBurgerBtn = document.getElementById('start-form');
+    const createBurgerBtn = document.getElementById('start-form');
 
-if (createBurgerBtn) {
-  createBurgerBtn.addEventListener('submit', (e) => {
-    e.preventDefault();
+    if (createBurgerBtn) {
+      createBurgerBtn.addEventListener('submit', (e) => {
+       e.preventDefault();
 
     // Grabs the value of the textarea that goes by the name, "quote"
-    const newBurger = {
+      const newBurger = {
       burger_name: document.getElementById('brgr').value.trim(),
       devoured: document.getElementById('devoured').checked,
     };
