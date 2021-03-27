@@ -2,9 +2,9 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'yourRoot
 
 DROP DATABASE IF EXISTS burgers_db;
 
-CREATE DATABASE burgers_db;
+CREATE DATABASE burger_db;
 
-USE burgers_db;
+USE burger_db;
 
 CREATE TABLE burgers
 (
