@@ -17,14 +17,14 @@ router.get('/', (req, res) => {
 });
 
 router.post('/api/burgers', (req, res) => {
-  let devoured = 0;
+  /*let devoured = 0;
   if (req.body.devoured === 'true') {
     devoured = 1;
-  }
-  burger.create(['burger_name', 'devoured'], [req.body.burger_name, req.body.devoured], (result) => {
+  }*/
+  burger.create(['burger_name', 'devoured'], [req.body.name, req.body.devoured], (result) => {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
-    }
+  }
   );
 });
 
