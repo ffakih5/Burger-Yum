@@ -1,23 +1,23 @@
 <div class="jumbotron">
   <div class="burger-image"><img src="assets/img/hamburger.png" alt="burger">
-<h2>Add or devour your burger of choice!</h2>
+    <h2>Add or devour your burger of choice!</h2>
     <div class="add-burger mt-4">
-    <form class="start-form">
-      <div class="form-group">
-      <div class="form-group mb-3">
-        <input type="text" id="brgr" name="burger_name" class="form-control" placeholder="Burger Name"
-          aria-label="Burger Name" aria-describedby="button-add">
-          <div class="form-group">
-            <input type="radio" name="devoured" value="1" id="devoured" checked>
-            <input type="radio" name="devoured" value="0" id="tobedevoured">
+      <form id="start-form">
+        <div class="form-group" id="burger-choice">
+          <div class="form-group mb-3">
+            <input type="text" id="brgr" name="name" class="form-control" placeholder="Burger Name"
+              aria-label="Burger Name" aria-describedby="button-add">
+            <div class="form-group">
+              <input type="radio" name="devoured" value="1" id="devoured" checked>
+              <input type="radio" name="devoured" value="0" id="tobedevoured">
+            </div>
+            <div class="append-input-group">
+              <button class="add-burger-btn" type="submit" id="button-add"> Add A Burger</button>
+            </div>
           </div>
-        <div class="append-input-group">
-          <button class="add-burger-btn" type="submit" id="button-add"> Add A Burger</button>
         </div>
-      </div>
-    </div>
-    </form>
-    
+      </form>
+
     </div>
   </div>
 </div>
@@ -28,12 +28,12 @@
     <div class="tobedevoured-list list-box my-2 my-sm-0 mr-sm-2">
       <h2 class="title-list">To Be Devoured:</h2>
       <ul class="content-list" id="tbd-list">
-        
+
         {{#each burgers}}
-          {{#unless devoured}}
-            {{> burgers/burger-block devour=true}}
-      {{/unless}}
-      {{/each}}
+        {{#unless devoured}}
+        {{> burgers/burger-block devour=true}}
+        {{/unless}}
+        {{/each}}
       </ul>
     </div>
 
@@ -41,9 +41,9 @@
       <h2 class="title-list">Devoured:</h2>
       <ul class="content-list" id="d-list">
         {{#each burgers}}
-          {{#if devoured}}
-              {{> burgers/burger-block devoured=false}}
-          {{/if}}
+        {{#if devoured}}
+        {{> burgers/burger-block devoured=false}}
+        {{/if}}
         {{/each}}
       </ul>
     </div>
