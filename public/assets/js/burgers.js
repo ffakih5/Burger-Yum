@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     console.info('DOM Loaded');
   }
 
-  const changeDevourBtns = document.querySelectorAll('.status-devour');
+  const changeDevourBtns = document.querySelectorAll('.change-devour');
 
   if (changeDevourBtns) {
     changeDevourBtns.forEach((button) => {
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
       // Grabs the value of the textarea that goes by the name, "quote"
       const newBurger = {
-        burger_name: document.getElementById('brgr').value.trim(),
+        name: document.getElementById('brgr').value.trim(),
         devoured: document.getElementById('devoured').checked,
       };
 
