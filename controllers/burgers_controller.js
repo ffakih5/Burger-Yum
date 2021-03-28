@@ -21,7 +21,7 @@ router.post('/api/burgers', (req, res) => {
   if (req.body.devoured === 'true') {
     devoured = 1;
   }*/
-  burger.create(['burger_name', 'devoured'], [req.body.name, req.body.devoured], (result) => {
+  burger.create(['burger_name', 'devour'], [req.body.name, req.body.devour], (result) => {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   }
@@ -35,7 +35,7 @@ router.put('/api/burgers/:id', (req, res) => {
 
   burger.update(
     {
-      devoured: req.body.devoured,
+      devour: req.body.devour,
     },
     condition,
     (result) => {
