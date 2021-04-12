@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const id = parseInt(dataId);
 
       const isDevoured = {
-        devoured: true,
+        devour: true,
       };
 
       fetch(`/api/burgers/${id}`, {
