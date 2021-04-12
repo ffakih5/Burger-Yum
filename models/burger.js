@@ -1,17 +1,18 @@
-const orm = require('../config/orm');
+const orm = require("../config/orm");
 
 const burger = {
-  allBurgers(cb) {
-    orm.selectAll('burgers', (res) =>
-      cb(res));
+  all(cb) {
+    orm.all("burgers", (res) => cb(res));
   },
-  addBurger(newBurger, cb) {
-    orm.insertOne('burgers', 'burger_name', newBurger, (res) =>
-      cb(res));
+  create(cols, vals, cb) {
+    orm.create("burgers", cols, vals, (res) => cb(res));
   },
-  updateBurger(burgerId, devouredStatus, cb) {
-    orm.updateOne('burgers', 'devoured', devouredStatus, 'id', burgerId, (res) => cb(res));
-  }
-}
+  update(objColVals, condition, cb) {
+    orm.update("burgers", objColVals, condition, (res) => cb(res));
+  },
+  delete(condition, cb) {
+    orm.delete("burgers", condition, (res) => cb(res));
+  },
+};
 
-module.exports = burger
+module.exports = burger;
