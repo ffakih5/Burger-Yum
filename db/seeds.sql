@@ -1,1 +1,1 @@
-INSERT INTO burgers (burger_name) VALUES ('Soul Lafel'), ('Elk Yeah'), ('Oh Deer'), ('Le Coq');
+INSERT INTO burgers (burger_name) VALUES ('Cheeseburger'), ('Zinger'), ('Mushroom Burger'), ('Mushroom Burger'), ('Fish Burger'), ('Veggie Burger'), ('BBQ Bacon Burger');
