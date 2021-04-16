@@ -3,7 +3,7 @@
 ![burger-yum](public/assets/img/burgerYum.png)
 
 ### [Heroku](https://protected-refuge-48581.herokuapp.com/)
-### [GitHub] (https://ffakih5.github.io/Burger-Yum/)
+### [GitHub](https://ffakih5.github.io/Burger-Yum/)
 
  This is an application for all the burger lovers out there. To interact with Burger-Yum, simply enter a burger of your choice, either devour it in the moment or savour it for later, then delete or reorder it! Enjoy as many burgers as you wish! 😋
 
