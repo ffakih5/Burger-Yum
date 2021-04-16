@@ -19,9 +19,10 @@ router.post('/api/burgers', function (req, res) {
   if (req.body.devour === 'true') {
     devour = 1;
   }
+  console.log(req.body);
   burger.create(
     ['burger_name', 'devour'],
-    [req.body.burger_name, devour],
+    [req.body.name, devour],
     function (result) {
       console.log(result);
       res.json({ id: result.insertId });

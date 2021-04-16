@@ -25,7 +25,7 @@
       <ul class="content-list" id="tbd-list">
 
         {{#each burgers}}
-        {{#unless devoured}}
+        {{#unless devour}}
         {{> burgers/burger-block devour=true}}
         {{/unless}}
         {{/each}}
@@ -36,8 +36,8 @@
       <h2 class="title-list">Devoured:</h2>
       <ul class="content-list" id="d-list">
         {{#each burgers}}
-        {{#if devoured}}
-        {{> burgers/burger-block devoured=false}}
+        {{#if devour}}
+        {{> burgers/burger-block devour=false}}
         {{/if}}
         {{/each}}
       </ul>
